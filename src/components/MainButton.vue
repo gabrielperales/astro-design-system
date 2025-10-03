@@ -11,9 +11,9 @@
 import { defineProps } from "vue";
 
 const props = defineProps<{
-  primary: boolean;
-  secondary: boolean;
-  text: boolean;
+  primary?: boolean;
+  secondary?: boolean;
+  text?: boolean;
 }>();
 
 const classes = {
