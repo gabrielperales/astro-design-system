@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import preact from "@astrojs/preact";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +12,9 @@ export default defineConfig({
     vue(),
     preact(),
     react(),
-    tailwind(),
     mdx(),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
