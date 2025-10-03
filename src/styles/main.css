@@ -2,6 +2,8 @@
 
 @theme {
   --dark-mode: class;
+  --color-primary: #3b82f6;
+  --color-secondary: #6b7280;
 }
 
 body {

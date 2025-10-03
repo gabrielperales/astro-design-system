@@ -3,24 +3,58 @@ title: "Buttons"
 layout: "../../layouts/MainLayout.astro"
 ---
 
-import MainButton from '../../components/MainButton.vue'
+import Button from '../../components/oxbow/Button.astro'
 
 ## All buttons
 
 This page is an example on how to document your button components, most of the copy was written by AI so don't take it very seriously.
 
-Find the code for this page in the `src/pages/components/buttons.md` file.
+Find the code for this page in the `src/pages/components/buttons.mdx` file.
 
 <div class="component-preview">
-    <MainButton primary>Primary</MainButton>
-    <MainButton secondary>Secondary</MainButton>
-    <MainButton text>Text</MainButton>
+    <div class="flex flex-col gap-4">
+        <h3>Default</h3>
+        <div class="flex gap-4">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+        </div>
+        <h3>Small</h3>
+        <div class="flex gap-4">
+            <Button variant="primary" size="sm">Primary</Button>
+            <Button variant="secondary" size="sm">Secondary</Button>
+            <Button variant="outline" size="sm">Outline</Button>
+        </div>
+        <h3>Large</h3>
+        <div class="flex gap-4">
+            <Button variant="primary" size="lg">Primary</Button>
+            <Button variant="secondary" size="lg">Secondary</Button>
+            <Button variant="outline" size="lg">Outline</Button>
+        </div>
+    </div>
 </div>
 
 ```js
-  <MainButton primary>Primary</MainButton>
-  <MainButton secondary>Secondary</MainButton>
-  <MainButton text>Text</MainButton>
+    <div class="flex flex-col gap-4">
+        <h3>Default</h3>
+        <div class="flex gap-4">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+        </div>
+        <h3>Small</h3>
+        <div class="flex gap-4">
+            <Button variant="primary" size="sm">Primary</Button>
+            <Button variant="secondary" size="sm">Secondary</Button>
+            <Button variant="outline" size="sm">Outline</Button>
+        </div>
+        <h3>Large</h3>
+        <div class="flex gap-4">
+            <Button variant="primary" size="lg">Primary</Button>
+            <Button variant="secondary" size="lg">Secondary</Button>
+            <Button variant="outline" size="lg">Outline</Button>
+        </div>
+    </div>
 ```
 
 ## Primary button
@@ -28,11 +62,15 @@ Find the code for this page in the `src/pages/components/buttons.md` file.
 We use the primary button for main actions like saving a form or creating a new item.
 
 <div class="component-preview">
-    <MainButton primary>Primary button</MainButton>
+    <Button variant="primary" size="sm">Primary button</Button>
+    <Button variant="primary" size="md">Primary button</Button>
+    <Button variant="primary" size="lg">Primary button</Button>
 </div>
 
 ```js
-<MainButton primary>Primary button</MainButton>
+    <Button variant="primary" size="sm">Primary button</Button>
+    <Button variant="primary" size="md">Primary button</Button>
+    <Button variant="primary" size="lg">Primary button</Button>
 ```
 
 ## Secondary button
@@ -41,11 +79,15 @@ Secondary buttons accompany primary buttons to provide additional actions.
 For example, cancel buttons are secondary buttons.
 
 <div class="component-preview">
-    <MainButton secondary>Secondary button</MainButton>
+    <Button variant="secondary" size="sm">Primary button</Button>
+    <Button variant="secondary" size="md">Primary button</Button>
+    <Button variant="secondary" size="lg">Primary button</Button>
 </div>
 
 ```js
-<MainButton secondary>Secondary button</MainButton>
+    <Button variant="secondary" size="sm">Primary button</Button>
+    <Button variant="secondary" size="md">Primary button</Button>
+    <Button variant="secondary" size="lg">Primary button</Button>
 ```
 
 ## Text button
@@ -53,9 +95,14 @@ For example, cancel buttons are secondary buttons.
 Text buttons are used for actions that do not require a primary or secondary button.
 
 <div class="component-preview">
-    <MainButton text>Text button</MainButton>
+    <Button variant="outline" size="sm">Primary button</Button>
+    <Button variant="outline" size="md">Primary button</Button>
+    <Button variant="outline" size="lg">Primary button</Button>
 </div>
 
 ```js
-<MainButton text>Text button</MainButton>
+    <Button variant="outline" size="sm">Primary button</Button>
+    <Button variant="outline" size="md">Primary button</Button>
+    <Button variant="outline" size="lg">Primary button</Button>
 ```
+

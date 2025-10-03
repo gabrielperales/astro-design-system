@@ -24,9 +24,6 @@ export const SIDEBAR = [
 
   { text: "Components", header: true },
   { text: "Buttons", link: "/components/buttons" },
-  { text: "Input", link: "/components/input" },
-  { text: "Status pills", link: "/components/status-pill" },
-  { text: "Table", link: "/components/table" },
 
   { text: "Patterns", header: true },
   { text: "Introduction", link: "/patterns/introduction" },

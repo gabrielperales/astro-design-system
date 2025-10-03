@@ -1,0 +1,62 @@
+---
+import '../../styles/main.css';
+
+type Variant = 'primary' | 'secondary' | 'outline'
+type Size = 'sm' | 'md' | 'lg'
+
+interface Props extends HTMLAttributes<'button'> {
+  size: Size
+  variant: Variant
+}
+
+const { text, size = 'md', variant = 'primary', ...props } = Astro.props
+---
+
+<button class:list={[
+  `oxbow-button`,
+  `oxbow-button--${size}`,
+  `oxbow-button--${variant}`,
+]} {...props}>
+  <slot />
+</button>
+
+<style is:global>
+  @reference "../../styles/main.css";
+
+  @layer oxbow {
+    .oxbow-button {
+      /* Default styles */
+      @apply rounded-md outline cursor-pointer;
+      /* Focus styles */
+      @apply focus-visible:outline-2 focus-visible:outline-offset-2;
+      /* Hover styles */
+      @apply hover:bg-zinc-950;
+      /* Dark mode styles */
+      @apply dark:bg-zinc-100 dark:text-zinc-900 dark:outline-zinc-100 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-200;
+
+      &.oxbow-button--primary {
+        @apply bg-primary text-white; 
+      }
+
+      &.oxbow-button--secondary {
+        @apply bg-secondary text-white;
+      }
+
+      &.oxbow-button--outline {
+        @apply bg-transparent text-primary border border-primary;
+      }
+
+      &.oxbow-button--sm {
+        @apply text-sm h-9 px-4;
+      }
+
+      &.oxbow-button--md {
+        @apply text-base h-11 px-6;
+      }
+
+      &.oxbow-button--lg {
+        @apply text-lg h-12 px-6;
+      }
+    }
+  }
+</style>
