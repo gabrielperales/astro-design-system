@@ -2,7 +2,7 @@
 import '../../styles/main.css';
 
 type Variant = 'primary' | 'secondary' | 'outline'
-type Size = 'sm' | 'md' | 'lg'
+type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 interface Props extends HTMLAttributes<'button'> {
   size: Size
@@ -10,53 +10,82 @@ interface Props extends HTMLAttributes<'button'> {
 }
 
 const { text, size = 'md', variant = 'primary', ...props } = Astro.props
+
+const baseBaseClasses = [
+  "cursor-pointer",
+  "inline-flex",
+  "items-center",
+  "justify-center",
+  "gap-2",
+  "whitespace-nowrap",
+  "rounded-lg",
+  "font-medium",
+  "border",
+  "bg-gradient-to-t",
+  "shadow-md",
+  "ring-1",
+  "ring-inset",
+  "ring-white/20",
+  "transition-[filter]",
+  "duration-200",
+  "[&_svg]:pointer-events-none",
+  "[&_svg]:size-4",
+  "[&_svg]:shrink-0",
+];
+
+const focusClasses = [
+  "focus-visible:outline-none",
+  "focus-visible:ring-1"
+];
+
+const disabledClasses = [
+  "disabled:opacity-50",
+  "disabled:pointer-events-none",
+];
+
+const hoverClasses = [
+  "hover:brightness-110"
+];
+
+const darkModeClasses = [
+  "dark:border-white/20",
+  "dark:ring-transparent"
+];
+
+const activeClasses = [
+  "active:brightness-90"
+];
+
+const sizeClasses = {
+  sm: "text-sm h-9 px-3.5 py-2",
+  md: "text-sm h-10 px-4 py-2",
+  lg: "text-base h-11 px-4.5 py-2",
+  xl: "text-base h-12 px-6 py-3",
+};
+
+const variantClasses = {
+  primary: "border-primary/25 from-primary to-primary/85 text-white shadow-primary/20 focus-visible:ring-primary",
+  secondary: "border-secondary/20 from-secondary to-secondary/85 text-metal-800 shadow-secondary/20 focus-visible:ring-secondary",
+  outline: "bg-transparent text-metal-800 border-secondary focus-visible:ring-secondary",
+};
+
+const baseClasses = [
+  ...baseBaseClasses,
+  ...focusClasses,
+  ...hoverClasses,
+  ...activeClasses,
+  ...darkModeClasses,
+  sizeClasses[size],
+  variantClasses[variant],
+].join(' ');
+
 ---
 
-<button class:list={[
-  `oxbow-button`,
-  `oxbow-button--${size}`,
-  `oxbow-button--${variant}`,
+<button 
+  data-size={size} 
+  data-variant={variant} 
+  class:list={[
+  baseClasses,
 ]} {...props}>
   <slot />
 </button>
-
-<style is:global>
-  @reference "../../styles/main.css";
-
-  @layer oxbow {
-    .oxbow-button {
-      /* Default styles */
-      @apply rounded-md outline cursor-pointer;
-      /* Focus styles */
-      @apply focus-visible:outline-2 focus-visible:outline-offset-2;
-      /* Hover styles */
-      @apply hover:bg-zinc-950;
-      /* Dark mode styles */
-      @apply dark:bg-zinc-100 dark:text-zinc-900 dark:outline-zinc-100 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-200;
-
-      &.oxbow-button--primary {
-        @apply bg-primary text-white; 
-      }
-
-      &.oxbow-button--secondary {
-        @apply bg-secondary text-white;
-      }
-
-      &.oxbow-button--outline {
-        @apply bg-transparent text-primary border border-primary;
-      }
-
-      &.oxbow-button--sm {
-        @apply text-sm h-9 px-4;
-      }
-
-      &.oxbow-button--md {
-        @apply text-base h-11 px-6;
-      }
-
-      &.oxbow-button--lg {
-        @apply text-lg h-12 px-6;
-      }
-    }
-  }
-</style>
