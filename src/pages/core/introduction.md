@@ -1,7 +1,7 @@
 ---
 title: Introduction
 description: Docs intro
-layout: ../../layouts/MainLayout.astro
+layout: ../../layouts/BaseLayout.astro
 ---
 
 # Astro Design System Theme

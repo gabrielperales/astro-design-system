@@ -1,0 +1,93 @@
+---
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+const features = [
+  {
+    title: "Quick Start",
+    description: "Get up and running in minutes with our step-by-step guide",
+    href: "/docs/getting-started/quick-start",
+  },
+  {
+    title: "API Reference",
+    description: "Complete reference for all endpoints and methods",
+    href: "/docs/api/overview",
+    cta: "Explore API ",
+  },
+  {
+    title: "Guides",
+    description: "In-depth guides for advanced configurations",
+    href: "/docs/guides/configuration",
+    cta: "Read guides ",
+  },
+  {
+    title: "Support",
+    description: "Get help when you need it most",
+    href: "/docs/help/faq",
+    cta: "Get help ",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12">
+    <div class="max-w-2xl">
+      <Text
+        tag="h2"
+        id="get-started-heading"
+        variant="textLG"
+        class="mt-auto font-medium text-base-900 dark:text-white"
+      >
+        Getting started
+      </Text>
+      <Text
+        tag="p"
+        variant="textSM"
+        class="mt-4 text-base-500 dark:text-base-300 leading-6 text-pretty"
+      >
+        Get started by scaffolding a new Astro project or adding docs to an
+        existing site. You can write pages in Markdown or MDX, customize layouts
+        with Tailwind CSS, and extend functionality with Astro integrations.
+        When you’re ready, deploy anywhere — Astro works great with static hosts
+        and edge platforms.
+      </Text>
+    </div>
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {
+        features.map((feature) => {
+          return (
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <Text
+                  tag="h3"
+                  variant="textBase"
+                  class="font-medium text-base-900 dark:text-white"
+                >
+                  {feature.title}
+                </Text>
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="mt-2 text-base-600 dark:text-base-400 text-pretty"
+                >
+                  {feature.description}
+                </Text>
+              </div>
+              <a
+                href={feature.href}
+                class="flex items-center mt-8 text-sm text-accent-600 hover:text-accent-500 dark:text-accent-400 gap-2 group"
+                aria-label={`${feature.title}: ${feature.description}`}
+              >
+                Read further
+                <ChevronRight
+                  size="sm"
+                  class="group-hover:translate-x-2 duration-300"
+                />
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

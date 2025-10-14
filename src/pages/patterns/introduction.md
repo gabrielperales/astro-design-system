@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/MainLayout.astro
+layout: "@/layouts/BaseLayout.astro"
 ---
 
-# Patterns
-
-Common patterns for building interfaces.
+<BaseLayout>
+# PatternsCommon patterns for building interfaces.
+</BaseLayout>

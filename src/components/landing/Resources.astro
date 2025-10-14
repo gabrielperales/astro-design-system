@@ -1,0 +1,79 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+// Icons
+import ChevronRight from "@/components/fundations/icons/ChevronRight.astro";
+
+const resources = [
+  {
+    id: "support",
+    title: "Support",
+    description: "Browse our FAQs or get direct help from our support team.",
+    href: "/docs/help/faq",
+  },
+  {
+    id: "community",
+    title: "Community",
+    description:
+      "Join our Discord and forums to connect with other developers.",
+    href: "#_",
+  },
+  
+];
+---
+
+<section>
+  <div class="px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <Text
+        tag="h2"
+        id="resources-heading"
+        variant="textLG"
+        class="mt-auto font-medium text-base-900 dark:text-white"
+      >
+        Resources
+      </Text>
+      <Text
+        tag="p"
+        variant="textSM"
+        class="mt-4 text-base-500 dark:text-base-300 leading-6 text-balance"
+      >
+        Find the help you need to succeed with your project — from support and
+        tutorials to community and third-party integrations.
+      </Text>
+    </div>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 lg:col-span-2"
+    >
+      {
+        resources.map((item) => (
+          <div class="relative flex flex-col justify-between h-full p-6 bg-base-50 dark:bg-white/2 gap-8 rounded-xl">
+            <div>
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="font-medium text-base-900 dark:text-white"
+              >
+                {item.title}
+              </Text>
+              <Text tag="p" variant="textSM" class="mt-2 text-base-500 dark:text-base-400">
+                {item.description}
+              </Text>
+            </div>
+            <a
+              href={item.href}
+              class="flex items-center text-sm  text-accent-600 hover:text-accent-500 dark:text-accent-400 gap-2 group"
+              aria-label={`${item.title}: ${item.description}`}
+            >
+              Explore
+              <ChevronRight
+                size="sm"
+                class="group-hover:translate-x-2 duration-300"
+              />
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,15 +1,15 @@
 ---
-import '../../styles/main.css';
+import "@/styles/global.css";
 
-type Variant = 'primary' | 'secondary' | 'outline'
-type Size = 'sm' | 'md' | 'lg' | 'xl'
+type Variant = "primary" | "secondary" | "outline";
+type Size = "sm" | "md" | "lg" | "xl";
 
-interface Props extends HTMLAttributes<'button'> {
-  size: Size
-  variant: Variant
+interface Props extends HTMLAttributes<"button"> {
+  size: Size;
+  variant: Variant;
 }
 
-const { text, size = 'md', variant = 'primary', ...props } = Astro.props
+const { text, size = "md", variant = "primary", ...props } = Astro.props;
 
 const baseBaseClasses = [
   "cursor-pointer",
@@ -33,28 +33,15 @@ const baseBaseClasses = [
   "[&_svg]:shrink-0",
 ];
 
-const focusClasses = [
-  "focus-visible:outline-none",
-  "focus-visible:ring-1"
-];
+const focusClasses = ["focus-visible:outline-none", "focus-visible:ring-1"];
 
-const disabledClasses = [
-  "disabled:opacity-50",
-  "disabled:pointer-events-none",
-];
+const disabledClasses = ["disabled:opacity-50", "disabled:pointer-events-none"];
 
-const hoverClasses = [
-  "hover:brightness-110"
-];
+const hoverClasses = ["hover:brightness-110"];
 
-const darkModeClasses = [
-  "dark:border-white/20",
-  "dark:ring-transparent"
-];
+const darkModeClasses = ["dark:border-white/20", "dark:ring-transparent"];
 
-const activeClasses = [
-  "active:brightness-90"
-];
+const activeClasses = ["active:brightness-90"];
 
 const sizeClasses = {
   sm: "text-sm h-9 px-3.5 py-2",
@@ -64,9 +51,12 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  primary: "border-primary/25 from-primary to-primary/85 text-white shadow-primary/20 focus-visible:ring-primary",
-  secondary: "border-secondary/20 from-secondary to-secondary/85 text-metal-800 shadow-secondary/20 focus-visible:ring-secondary",
-  outline: "bg-transparent text-metal-800 border-secondary focus-visible:ring-secondary",
+  primary:
+    "border-primary/25 from-primary to-primary/85 text-white shadow-primary/20 focus-visible:ring-primary",
+  secondary:
+    "border-secondary/20 from-secondary to-secondary/85 text-metal-800 shadow-secondary/20 focus-visible:ring-secondary",
+  outline:
+    "bg-transparent text-metal-800 border-secondary focus-visible:ring-secondary",
 };
 
 const baseClasses = [
@@ -77,15 +67,14 @@ const baseClasses = [
   ...darkModeClasses,
   sizeClasses[size],
   variantClasses[variant],
-].join(' ');
-
+].join(" ");
 ---
 
-<button 
-  data-size={size} 
-  data-variant={variant} 
-  class:list={[
-  baseClasses,
-]} {...props}>
+<button
+  data-size={size}
+  data-variant={variant}
+  class:list={[baseClasses]}
+  {...props}
+>
   <slot />
 </button>

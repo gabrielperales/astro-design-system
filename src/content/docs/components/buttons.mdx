@@ -1,0 +1,190 @@
+---
+title: "Button"
+description: "The button"
+category: "components"
+order: 2
+lastUpdated: 2025-07-01
+---
+
+import Button from "@/components/oxbow/Button.astro";
+
+import Plus from "@/components/fundations/icons/Plus.astro";
+
+## All buttons
+
+This page is an example on how to document your button components, most of the copy was written by AI so don't take it very seriously.
+
+Find the code for this page in the `src/pages/components/buttons.mdx` file.
+
+<div class="my-4 not-prose">
+  <div class="flex flex-col gap-4  not-prose">
+    <h3>Default</h3>
+    <div class="flex flex-wrap gap-4 not-prose">
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="outline">Outline</Button>
+    </div>
+    <h3>Small</h3>
+    <div class="flex flex-wrap gap-4 not-prose">
+      <Button variant="primary" size="sm">
+        Primary
+      </Button>
+      <Button variant="secondary" size="sm">
+        Secondary
+      </Button>
+      <Button variant="outline" size="sm">
+        Outline
+      </Button>
+    </div>
+    <h3>Large</h3>
+    <div class="flex flex-wrap gap-4 not-prose">
+      <Button variant="primary" size="lg">
+        Primary
+      </Button>
+      <Button variant="secondary" size="lg">
+        Secondary
+      </Button>
+      <Button variant="outline" size="lg">
+        Outline
+      </Button>
+    </div>
+    <h3>Extra Large</h3>
+    <div class="flex flex-wrap gap-4 not-prose">
+      <Button variant="primary" size="xl">
+        Primary
+      </Button>
+      <Button variant="secondary" size="xl">
+        Secondary
+      </Button>
+      <Button variant="outline" size="xl">
+        Outline
+      </Button>
+    </div>
+  </div>
+</div>
+
+```js
+<div class="flex flex-col gap-4  not-prose">
+  <h3>Default</h3>
+  <div class="flex flex-wrap gap-4 not-prose">
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="outline">Outline</Button>
+  </div>
+  <h3>Small</h3>
+  <div class="flex flex-wrap gap-4 not-prose">
+    <Button variant="primary" size="sm">
+      Primary
+    </Button>
+    <Button variant="secondary" size="sm">
+      Secondary
+    </Button>
+    <Button variant="outline" size="sm">
+      Outline
+    </Button>
+  </div>
+  <h3>Large</h3>
+  <div class="flex flex-wrap gap-4 not-prose">
+    <Button variant="primary" size="lg">
+      Primary
+    </Button>
+    <Button variant="secondary" size="lg">
+      Secondary
+    </Button>
+    <Button variant="outline" size="lg">
+      Outline
+    </Button>
+  </div>
+  <h3>Extra Large</h3>
+  <div class="flex flex-wrap gap-4 not-prose">
+    <Button variant="primary" size="xl">
+      Primary
+    </Button>
+    <Button variant="secondary" size="xl">
+      Secondary
+    </Button>
+    <Button variant="outline" size="xl">
+      Outline
+    </Button>
+  </div>
+</div>
+```
+
+## Primary button
+
+We use the primary button for main actions like saving a form or creating a new item.
+
+<div class="my-4 not-prose flex flex-wrap gap-4">
+  <Button variant="primary" size="sm">
+    Primary button
+  </Button>
+  <Button variant="primary" size="md">
+    Primary button
+  </Button>
+  <Button variant="primary" size="lg">
+    Primary button
+  </Button>
+  <Button variant="primary" size="xl">
+    Primary button
+  </Button>
+</div>
+
+```js
+<Button variant="primary" size="sm">Primary button</Button>
+<Button variant="primary" size="md">Primary button</Button>
+<Button variant="primary" size="lg">Primary button</Button>
+<Button variant="primary" size="xl">Primary button</Button>
+```
+
+## Secondary button
+
+Secondary buttons accompany primary buttons to provide additional actions.
+For example, cancel buttons are secondary buttons.
+
+<div class="my-4 not-prose flex flex-wrap gap-4">
+  <Button variant="secondary" size="sm">
+    Secondary button
+  </Button>
+  <Button variant="secondary" size="md">
+    Secondary button
+  </Button>
+  <Button variant="secondary" size="lg">
+    Secondary button
+  </Button>
+  <Button variant="secondary" size="xl">
+    Secondary button
+  </Button>
+</div>
+
+```js
+<Button variant="secondary" size="sm">Secondary button</Button>
+<Button variant="secondary" size="md">Secondary button</Button>
+<Button variant="secondary" size="lg">Secondary button</Button>
+<Button variant="secondary" size="xl">Secondary button</Button>
+```
+
+## Text button
+
+Text buttons are used for actions that do not require a primary or secondary button.
+
+<div class="my-4 not-prose flex flex-wrap gap-4">
+  <Button variant="outline" size="sm">
+    Outline button
+  </Button>
+  <Button variant="outline" size="md">
+    Outline button
+  </Button>
+  <Button variant="outline" size="lg">
+    Outline button
+  </Button>
+  <Button variant="outline" size="xl">
+    Outline button
+  </Button>
+</div>
+
+```js
+<Button variant="outline" size="sm">Outline button</Button>
+<Button variant="outline" size="md">Outline button</Button>
+<Button variant="outline" size="lg">Outline button</Button>
+<Button variant="outline" size="xl">Outline button</Button>
+```
