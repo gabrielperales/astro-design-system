@@ -11,10 +11,10 @@
   "dependencies": {
     "@algolia/client-search": "^4.13.0",
     "@astrojs/mdx": "^4.0.0",
-    "@docsearch/css": "^3.0.0",
-    "@docsearch/react": "^3.0.0",
+    "@docsearch/css": "^4.2.0",
+    "@docsearch/react": "^4.2.0",
     "@tailwindcss/vite": "^4.1.14",
-    "@types/react": "^18.2.0",
+    "@types/react": "^18.0.21",
     "preact": "^10.19.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,8 +22,8 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
-    "@astrojs/preact": "^3.0.0",
-    "@astrojs/react": "^3.0.0",
+    "@astrojs/preact": "^4.0.0",
+    "@astrojs/react": "^4.0.0",
     "@astrojs/vue": "^5.0.0",
     "@babel/core": "^7.23.0",
     "@types/react-dom": "^18.2.0",
