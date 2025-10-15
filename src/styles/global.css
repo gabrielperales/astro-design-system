@@ -1,7 +1,7 @@
-@import "tailwindcss";
 @import "./kromatika.css";
 @import "./colors.css";
 @import "./syntaxhighlighting.css";
+@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 @plugin "tailwind-scrollbar-hide";
@@ -13,19 +13,27 @@
   --font-sans: Geist, sans-serif;
   --font-mono: Geist Mono, monospace;
  /* Colors */
-  --color-accent-50: oklch(0.977 0.013 236.62);
-  --color-accent-100: oklch(0.951 0.026 236.824);
-  --color-accent-200: oklch(0.901 0.058 230.902);
-  --color-accent-300: oklch(0.828 0.111 230.318);
-  --color-accent-400: oklch(0.746 0.16 232.661);
-  --color-accent-500: oklch(0.685 0.169 237.323);
-  --color-accent-600: oklch(0.588 0.158 241.966);
-  --color-accent-700: oklch(0.5 0.134 242.749);
-  --color-accent-800: oklch(0.443 0.11 240.79);
-  --color-accent-900: oklch(0.391 0.09 240.876);
-  --color-accent-950: oklch(0.293 0.066 243.157);
-  /* base*/
---color-base-50: oklch(0.985 0 0);
+   --color-blue-light: #60beff;
+  --color-blue: #1da8ff;
+  --color-blue-dark: #007bff;
+  --color-green-light: #33cd8e;
+  --color-green: #00c172;
+  --color-green-dark: #00a651;
+  --color-yellow-light: #ffcd6c;
+  --color-yellow: #ffb112;
+  --color-yellow-dark: #ffa100;
+  --color-orange: #fa5925;
+  --color-orange-dark: #fd4202;
+  /* Accents */
+  --color-accent: #f85912;
+  --color-accent-dark: #e03e23;
+  /* Accents - British Racing Green */
+  --color-beige: #f7f7f4;
+  --color-beige-dark: #e4e1db;
+  
+
+  /* Base colors */
+  --color-base-50: oklch(0.985 0 0);
   --color-base-100: oklch(0.97 0 0);
   --color-base-200: oklch(0.922 0 0);
   --color-base-300: oklch(0.87 0 0);

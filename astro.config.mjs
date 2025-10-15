@@ -10,7 +10,6 @@ import {
 export default defineConfig({
   site: "https://example.com",
   integrations: [
-    mdx(),
     mdx({
       syntaxHighlight: "shiki",
       shikiConfig: {

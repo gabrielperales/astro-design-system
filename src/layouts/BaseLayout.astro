@@ -17,9 +17,9 @@ import ToggleLocalStorage from "@/components/fundations/scripts/ToggleLocalStora
   <head>
     <BaseHead />
   </head>
-  <body class="flex flex-col bg-white dark:bg-base-900 min-h-svh">
+  <body class="flex flex-col bg-white dark:bg-base-900 lg:h-dvh">
     {!hideNav && <Navigation />}
-    <main><slot /></main>
+    <main class="grow"><slot /></main>
     {!hideFooter && <Footer />}
     <ToggleLocalStorage />
   </body>
