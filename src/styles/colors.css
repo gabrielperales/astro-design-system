@@ -1,0 +1,9 @@
+@theme {
+  /* Semantic Colors */
+  --color-primary: var(--color-blueBerry-600);
+  --color-secondary: var(--color-metal-50);
+  --color-info: var(--color-blue-900);
+  --color-success: var(--color-persianGreen-900);
+  --color-warning: var(--color-carrot-900);
+  --color-destructive: var(--color-red-900);
+}

@@ -1,0 +1,39 @@
+---
+interface Doc {
+  slug: string;
+  title: string;
+  order: number;
+}
+interface Props {
+  title: string;
+  docs: Doc[];
+  index: number;
+}
+const { title, docs, index } = Astro.props;
+const currentPath = Astro.url.pathname;
+const sectionId = `section-${title.toLowerCase().replace(/\s+/g, "-")}`;
+---
+
+<div class="sidebar-section" id={sectionId}>
+  <h3
+    class="sidebar-title text-base-900 dark:text-white px-4 py-2.5 text-xs font-medium"
+  >
+    {title}
+  </h3>
+  <nav class="sidebar-links flex flex-col gap-1 px-4 pb-2">
+    {
+      docs.map((doc) => {
+        const href = `/docs/${doc.slug}`;
+        const isActive = currentPath === href || currentPath === `${href}/`;
+        return (
+          <a
+            href={href}
+            class={`sidebar-link text-base-700 dark:text-base-200 hover:text-accent-600 dark:hover:text-accent-400 text-xs py-1 px-2 rounded transition-colors${isActive ? " bg-base-100 dark:bg-base-900 font-bold" : ""}`}
+          >
+            {doc.title}
+          </a>
+        );
+      })
+    }
+  </nav>
+</div>
